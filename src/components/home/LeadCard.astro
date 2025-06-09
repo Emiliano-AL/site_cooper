@@ -1,0 +1,16 @@
+---
+const { number_icon, title, description, iconname, color } = Astro.props;
+---
+
+<section class={`w-full lg:w-[327px] h-[317px] relative ${color}`}>
+  <img src={`/${number_icon}`} alt={title} class="w-[103px] h-[70px] absolute left-3 -top-5 z-10" />
+  <div class="w-full h-full flex flex-col items-center justify-center px-4">
+    <img src={`/${iconname}`} alt={title} class="w-[80px] h-[80px]" />
+    <h3 class="text-white text-[26px] font-bold mt-4 text-center leading-10">
+      {title}
+    </h3>
+    <p class="text-white text-[26px] mt-4 text-center leading-10">
+      {description}
+    </p>
+  </div>
+</section>
