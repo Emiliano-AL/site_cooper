@@ -1,0 +1,92 @@
+---
+// Add client-side JavaScript
+---
+
+<section class="max-w-7xl mx-auto min-h-[400px] md:min-h-[600px] lg:min-h-[646px] w-full relative pt-10 pb-20 px-4 md:px-6 lg:px-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="bg-gradient-to-tl from-[#BF272D] to-[#373F52] w-full md:w-max-[629px] h-[208px] flex justify-center items-end">
+      <button 
+        id="misionBtn"
+        class="bg-[#F1F1F1] hover:bg-[#BF272D] hover:text-white text-[#373F52] text-[28px] md:text-[36px] lg:text-[42px] font-bold leading-10 py-2 md:py-3 px-4 md:px-6 transition-colors duration-300"
+        data-section="mision">
+        Misión
+      </button>
+      <button 
+        id="visionBtn"
+        class="bg-[#F1F1F1] hover:bg-[#BF272D] hover:text-white text-[#373F52] text-[28px] md:text-[36px] lg:text-[42px] font-bold leading-10 py-2 md:py-3 px-4 md:px-6 transition-colors duration-300"
+        data-section="vision">
+        Visión
+      </button>
+    </div>
+    <div class="flex justify-center items-start flex-col gap-y-4 md:gap-y-6">
+      <h1 class="text-[#373F52] text-[48px] md:text-[62px] lg:text-[78px] font-bold leading-10">Principios</h1>
+      <h3 class="text-[#373F52] text-[36px] md:text-[48px] lg:text-[61px] leading-10">que nos deﬁnen</h3>
+    </div>
+  </div>
+  <div class="flex justify-center items-center">
+    <div id="misionSection" class="w-full md:w-[90%] lg:w-[1177px] min-h-[300px] md:min-h-[400px] lg:h-[437px] bg-[#373F52] flex justify-center items-center flex-col gap-y-4 md:gap-y-6 relative px-4 md:px-6 lg:px-8">
+      <div class="bg-[url('/nosotros/log_cortado.png')] bg-no-repeat bg-cover bg-center w-[100px] md:w-[130px] lg:w-[163px] h-[200px] md:h-[260px] lg:h-[328px] absolute top-8 md:top-10 lg:top-14 left-0"></div>
+      <h1 class="text-white text-[36px] md:text-[48px] lg:text-[78px] font-bold leading-10 self-start ps-16 md:ps-32 lg:ps-44">
+        Misión
+      </h1>
+      <p class="text-white text-[16px] md:text-[20px] lg:text-[25px] font-bold leading-7 max-w-[882px] ps-6 md:ps-8 lg:ps-10">
+        Liderar la distribución y exportación de metales no ferrosos reciclados, ofreciendo soluciones conﬁables y eﬁcientes, con enfoque en la calidad, la ética comercial y la excelencia operativa.
+      </p>
+    </div>
+
+    <div id="visionSection" class="w-full md:w-[90%] lg:w-[1177px] min-h-[300px] md:min-h-[400px] lg:h-[437px] bg-[#373F52] justify-center items-center flex-col gap-y-4 md:gap-y-6 relative px-4 md:px-6 lg:px-8 flex">
+      <div class="bg-[url('/nosotros/log_cortado.png')] bg-no-repeat bg-cover bg-center w-[100px] md:w-[130px] lg:w-[163px] h-[200px] md:h-[260px] lg:h-[328px] absolute top-8 md:top-10 lg:top-14 left-0"></div>
+      <h1 class="text-white text-[36px] md:text-[48px] lg:text-[78px] font-bold leading-10 self-start ps-16 md:ps-32 lg:ps-44">
+        Visión
+      </h1>
+      <p class="text-white text-[16px] md:text-[20px] lg:text-[25px] font-bold leading-7 max-w-[882px] ps-6 md:ps-8 lg:ps-10">
+        Ser reconocidos como líderes globales en la comercialización de metales no ferrosos reciclados, destacando por nuestra innovación, sostenibilidad y compromiso con la excelencia en el servicio.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Function to handle section switching
+  function switchSection(sectionId: string) {
+    const misionSection = document.getElementById('misionSection');
+    const visionSection = document.getElementById('visionSection');
+    const misionBtn = document.getElementById('misionBtn');
+    const visionBtn = document.getElementById('visionBtn');
+
+    if (!misionSection || !visionSection || !misionBtn || !visionBtn) return;
+
+    if (sectionId === 'mision') {
+      misionSection.classList.remove('hidden');
+      visionSection.classList.add('hidden');
+      misionBtn.classList.add('bg-[#BF272D]', 'text-white');
+      misionBtn.classList.remove('bg-[#F1F1F1]', 'text-[#373F52]');
+      visionBtn.classList.add('bg-[#F1F1F1]', 'text-[#373F52]');
+      visionBtn.classList.remove('bg-[#BF272D]', 'text-white');
+    } else {
+      visionSection.classList.remove('hidden');
+      misionSection.classList.add('hidden');
+      visionBtn.classList.add('bg-[#BF272D]', 'text-white');
+      visionBtn.classList.remove('bg-[#F1F1F1]', 'text-[#373F52]');
+      misionBtn.classList.add('bg-[#F1F1F1]', 'text-[#373F52]');
+      misionBtn.classList.remove('bg-[#BF272D]', 'text-white');
+    }
+  }
+
+  // Add click event listeners
+  const misionBtn = document.getElementById('misionBtn');
+  const visionBtn = document.getElementById('visionBtn');
+
+  if (misionBtn) {
+    misionBtn.addEventListener('click', () => switchSection('mision'));
+  }
+
+  if (visionBtn) {
+    visionBtn.addEventListener('click', () => switchSection('vision'));
+  }
+
+  // Initialize with mission section active
+  document.addEventListener('DOMContentLoaded', () => {
+    switchSection('mision');
+  });
+</script>
