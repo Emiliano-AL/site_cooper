@@ -77,7 +77,7 @@ site_cooper/
 
 ## Contacto
 
-Para más información o soporte, contacta al equipo de desarrollo.
+Para más información o soporte, contacta a [@emiliano-al](https://github.com/Emiliano-AL)
 
 ---
 
