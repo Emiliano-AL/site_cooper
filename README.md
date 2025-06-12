@@ -6,7 +6,7 @@ Este proyecto es un sitio web desarrollado con Astro y Tailwind CSS para Metal C
 
 Antes de comenzar, asegúrate de tener instalado:
 
-- [Node.js](https://nodejs.org/) (versión 16 o superior)
+- [Node.js](https://nodejs.org/) (versión 18 o superior)
 - npm (viene incluido con Node.js)
 
 ## Instrucciones de Instalación
